@@ -1,0 +1,37 @@
+﻿@page "/"
+
+<Container Fluid="true">
+    <Row>
+        <Column ColumnSize="ColumnSize.Is12">
+            <Card>
+                <CardBody>
+                    <CardText>
+                        <h1>Template Details</h1>
+                        <p>This Template is preconfigured for CAC Card Authentication, and includes the Blazorise Material Libraries, 
+                        Entity Framework for SQL Server Libraries, and AD Directory Searcher Libraries. All required CSS and Script Files have already been included.</p>
+                        <br />
+                        <p>Policies can be configured in the Startup.CS File. Policies can then be assigned to an AD Group in the UserAuthorizationService 
+                        class located in THIS.Data.Authorize . No changes should be needed for the UserInfo Class</p>
+                        <br />
+                        <p>Any Razor Components you create can and should be organized in the Components folders. Once you have begun adding razor Components to the folder 
+                        a using statement may need to be added to the _Imports.razor folder.</p>
+                        <br />
+                        <p>
+                            If you aren't prompted for the smart card certificate when you first run the program you will need to modify the ApplicationHost.Config File for the project
+                            Located at This.Project\.vs\BlazorServerAuthTemplate\config. <br />
+                            you will need to set the following
+                            <br />access sslFlags="Ssl, SslNegotiateCert, SslRequireCert"
+                            <br />clientCertificateMappingAuthentication enabled="true"
+                            <br />windowsAuthentication enabled="true"
+                            <br />anonymousAuthentication enabled="false"
+                        </p>
+                    </CardText>
+                </CardBody>
+            </Card>
+        </Column>
+    </Row>
+</Container>
+    
+@code{
+
+}
