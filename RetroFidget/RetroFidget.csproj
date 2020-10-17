@@ -2,7 +2,12 @@
 
   <PropertyGroup>
     <TargetFramework>netcoreapp3.1</TargetFramework>
+    <UserSecretsId>84850448-b96c-412f-9fa0-0efef6af66b9</UserSecretsId>
   </PropertyGroup>
+
+  <ItemGroup>
+    <Content Remove="wwwroot\css\retro-styles.scss" />
+  </ItemGroup>
 
   <ItemGroup>
     <PackageReference Include="Blazorise.Components" Version="0.9.2-preview8" />
@@ -16,6 +21,11 @@
 
   <ItemGroup>
     <Folder Include="Components\Example\" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <None Include="wwwroot\Assets\Hamster.gif" />
+    <None Include="wwwroot\Assets\icons8-switch-on-64.png" />
   </ItemGroup>
 
 </Project>
