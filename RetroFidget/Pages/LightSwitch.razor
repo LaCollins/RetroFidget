@@ -1,36 +1,65 @@
 ﻿@page "/lightswitch"
 
-<h3>LightSwitch</h3>
+    <Card class="@colorClass">
+        <CardTitle Size="5" Weight="TextWeight.Bold" Class="m-2">Light Switch</CardTitle>
+        <CardBody>
+            <div class="light-switch">
+                <Switch TValue="bool" Checked="@on" CheckedChanged="@OnOff"></Switch>
+            </div>
+        </CardBody>
+    </Card>
+    <Modal Color="Color.Success" @ref="myAlert">
+        <ModalBackdrop />
+        <ModalContent IsCentered="true">
+            <ModalHeader>
+                <ModalTitle>Hey!</ModalTitle>
+                <CloseButton Clicked="@CloseModal" />
+            </ModalHeader>
+            <ModalBody>
+                <div class="row text-center">
+                    <img src="/Assets/pngkey.com-runner-png-1454603.png" class="cheat m-2" />
+                    <p class="w-75 font-weight-bold">
+                        We installed that light switch so you could turn the lights on, and off.
+                        Not so you could through a light switch rave!
+                    </p>
+                    <img src="/Assets/pngkey.com-meatwad-png-3269395.png" class="strongBad m-2" />
+                </div>
+            </ModalBody>
+        </ModalContent>
+    </Modal>
 
-@code {
+    @code {
+        bool on;
+        private int currentCount = 0;
+        private string colorClass = "bg-dark m-2 w-25";
+        private Modal myAlert;
 
-}
+        private void OnOff(bool value)
+        {
+            on = value;
+            currentCount++;
+            if (on)
+            {
+                colorClass = "bg-light m-2 w-25";
+            } else
+            {
+                colorClass = "bg-dark m-2 w-25";
+            }
 
-@*<Container Fluid="true">
-    <Row>
-        <Column ColumnSize="ColumnSize.Is12">
-            <Card>
-                <CardBody>
-                    <CardText>
-                        <h1>Counter</h1>
+            if(currentCount >= 10)
+            {
+                StopLights();
+            }
+        }
 
-                        <p>Current count: @currentCount</p>
+        private void StopLights()
+        {
+            myAlert.Show();
+        }
 
-                        <Button Color="Color.Success" @onclick="IncrementCount">Click me</Button>
+        private void CloseModal()
+        {
+            myAlert.Hide();
+        }
 
-                    </CardText>
-                </CardBody>
-            </Card>
-        </Column>
-    </Row>
-</Container>
-
-
-@code {
-    private int currentCount = 0;
-
-    private void IncrementCount()
-    {
-        currentCount++;
     }
-}*@

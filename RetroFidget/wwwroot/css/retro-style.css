@@ -4,6 +4,10 @@
     margin-right: 10px;
 }
 
+/*.light-switch {
+    transform: rotate(90deg);
+}*/
+
 .hamster {
     height: 2em;
     width: 2em;
@@ -11,4 +15,13 @@
 
 .top-banner-main {
     background-color:#3a0647;
+}
+
+.cheat {
+    width: 4em;
+    height: 4em;
+}
+
+.strongBad {
+    width: 3em;
 }
