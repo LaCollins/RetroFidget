@@ -1,0 +1,36 @@
+﻿@page "/lightswitch"
+
+<h3>LightSwitch</h3>
+
+@code {
+
+}
+
+@*<Container Fluid="true">
+    <Row>
+        <Column ColumnSize="ColumnSize.Is12">
+            <Card>
+                <CardBody>
+                    <CardText>
+                        <h1>Counter</h1>
+
+                        <p>Current count: @currentCount</p>
+
+                        <Button Color="Color.Success" @onclick="IncrementCount">Click me</Button>
+
+                    </CardText>
+                </CardBody>
+            </Card>
+        </Column>
+    </Row>
+</Container>
+
+
+@code {
+    private int currentCount = 0;
+
+    private void IncrementCount()
+    {
+        currentCount++;
+    }
+}*@
